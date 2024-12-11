@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // When player collides with ground, inOnGround = true
+        // When player collides with ground, isOnGround = true
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
