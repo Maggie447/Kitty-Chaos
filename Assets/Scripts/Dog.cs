@@ -12,12 +12,13 @@ public class Dog : MonoBehaviour
     void Start()
     {
         dogRb = GetComponent<Rigidbody>();
-        player = GameObject.Find("cat placeholder");
+        player = GameObject.Find("cat");
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Dog chases cat
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         dogRb.AddForce(lookDirection * speed);
     }

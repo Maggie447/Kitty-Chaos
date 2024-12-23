@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     private GameObject focalPoint;
-    public float speed = 0.2f;
+    public float forwardSpeed = 8.0f;
+    public float rotateSpeed = 60.0f;
     public float jumpForce = 10.0f;
     public bool isOnGround = true;
 
@@ -20,9 +21,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Player movement
+        // Player forward movement
         float forwardInput = Input.GetAxis("Vertical");
-        transform.Translate(-focalPoint.transform.forward * speed * forwardInput);
+        transform.Translate(focalPoint.transform.up * forwardSpeed * forwardInput * Time.deltaTime);
 
         // Player jump (when on ground)
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
