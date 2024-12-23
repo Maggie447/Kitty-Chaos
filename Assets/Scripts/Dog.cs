@@ -20,6 +20,6 @@ public class Dog : MonoBehaviour
     {
         // Dog chases cat
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        dogRb.AddForce(lookDirection * speed);
+        transform.Translate(lookDirection * speed * Time.deltaTime);
     }
 }
