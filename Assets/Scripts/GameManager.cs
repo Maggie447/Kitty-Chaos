@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    // When dog collides with cat, update lives (does not work yet)
     private void OnTriggerEnter(Collider other)
     {
         if (gameObject.CompareTag("Dog"))
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Update lives until game over
     public void UpdateLives()
     {
         if (isGameActive)
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Activate game over screen
     public void GameOver()
     {
         restartButton.gameObject.SetActive(true);
@@ -55,11 +58,14 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
     }
 
+    // Restart game after pressing restart button
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+
+    // Start game after pressing start button
     public void StartGame()
     {
         isGameActive = true;
