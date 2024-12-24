@@ -27,6 +27,14 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.CompareTag("Dog"))
+        {
+            UpdateLives();
+        }
+    }
+
     public void UpdateLives()
     {
         if (isGameActive)
